@@ -26,7 +26,8 @@
     "build": "react-scripts build && cpx \"db/**/*\" build/db",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db/db.json --port 3131"
+    "server": "json-server --watch db/db.json --port 3131",
+    "prod": "node server.mjs"
   },
   "eslintConfig": {
     "extends": [
