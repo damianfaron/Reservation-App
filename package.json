@@ -23,10 +23,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cpx \"db/**/*\" build/db",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 3131"
+    "server": "json-server --watch db/db.json --port 3131"
   },
   "eslintConfig": {
     "extends": [
@@ -45,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0"
   }
 }

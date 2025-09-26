@@ -1,8 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import Button from '../common/Button/Button';
+import { fetchTables } from '../../redux/tablesRedux';
 
 const Home = () => {
+  const dispatch = useDispatch();
   const tables = useSelector((state) => state.tables);
+
+  useEffect(() => {
+    dispatch(fetchTables());
+  }, [dispatch]);
 
   if (!tables || tables.length === 0) {
     return <p>Ładowanie stolików...</p>;
